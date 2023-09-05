@@ -8,11 +8,9 @@ To run the project, simply execute the following two commands:
 
 ```
 1. npm start
-
 ```
 ```
 2. npm run start:db
 ```
-
 
 Explore your book collection and enjoy effortless book management with the Book App.
