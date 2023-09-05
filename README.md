@@ -7,19 +7,20 @@ Getting Started:
 To run the project, follow these steps:
 
 1. Install project dependencies by running
-   
-   ```npm install```
-   
+   ```
+   npm install
+   ```
 3. Install JSON server by running
-   
-   ```npm i json-server```
-   
+   ```
+   npm i json-server
+   ```
 5. Start the application with
-   
-   ```npm start```
-   
+   ```
+   npm start
+   ```
 7. Start the JSON server with
-   
-   ```npm run start:db```
+   ```
+   npm run start:db
+   ```
 
 Explore your book collection and enjoy effortless book management with the Book App.
