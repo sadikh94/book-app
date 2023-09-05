@@ -1,0 +1,138 @@
+<div class="book-flip">
+  <div
+    class="book-flip-card"
+    [ngClass]="toggleProperty ? 'flipped' : ''"
+  >
+    <div class="book">
+      <div class="book_header">
+        <div class="book_header-icons">
+          <button
+            class="book_header-icons-edit"
+            btn
+            mat-button
+            mat-icon-button
+            aria-label="Edit"
+            matTooltip="Edit"
+            (click)="onBookEdit(book)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button
+            class="book_header-icons-favorite black"
+            btn
+            mat-button
+            mat-icon-button
+            aria-label="Favorite"
+            [ngClass]="{ red: book.favorite }"
+            (click)="addToFavorites()"
+            matTooltip="Favorite"
+          >
+            <mat-icon>favorite</mat-icon>
+          </button>
+
+          <button
+            class="book_header-icons-delete"
+            (click)="deleteBook()"
+            btn
+            mat-button
+            mat-icon-button
+            aria-label="Delete"
+            matTooltip="Delete"
+            *ngIf="!book.favorite"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button
+            class="book_header-icons-delete-disabled"
+            btn
+            mat-button
+            mat-icon-button
+            disabled
+            *ngIf="book.favorite"
+          >
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="book_body">
+        <button
+          class="arrow-background"
+          btn
+          mat-button
+          mat-icon-button
+          (click)="toggle()"
+        >
+          <div
+            class="arrow-icon arrow-flipped"
+            matTooltip="Flip"
+          >
+            <mat-icon>arrow_back</mat-icon>
+          </div>
+        </button>
+        <img
+          class="book_body-cover"
+          src="{{ book.cover }}"
+          alt="cover"
+        />
+      </div>
+
+      <div class="book_foot">
+        <h1 class="book_foot-category-title">{{ book.genre }}</h1>
+        <h2 class="book_foot-name-title">{{ book.title }}</h2>
+      </div>
+    </div>
+    <div class="book-back">
+      <div class="book-back_header">
+        <div class="book-back_header-icons">
+          <button
+            class="book-back_header-icons-read"
+            btn
+            mat-button
+            mat-icon-button
+            aria-label="Read"
+            matTooltip="Read"
+            (click)="onReadMore(book)"
+          >
+            <mat-icon>library_books</mat-icon>
+          </button>
+          <button
+            class="book-back_header-icons-download"
+            btn
+            mat-button
+            mat-icon-button
+            aria-label="Download"
+            matTooltip="Download"
+						(click)="generatePdf()"
+          >
+            <mat-icon>download</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="book-back_body">
+        <button
+          btn
+          mat-button
+          mat-icon-button
+          class="arrow-background"
+          (click)="toggle()"
+        >
+          <div
+            class="arrow-icon"
+            matTooltip="Flip"
+          >
+            <mat-icon>arrow_back</mat-icon>
+          </div>
+        </button>
+        <h1 class="book-back_body-description-title">
+          {{ book.title }}
+        </h1>
+        <p class="book-back_body-book-description">
+          {{ book.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

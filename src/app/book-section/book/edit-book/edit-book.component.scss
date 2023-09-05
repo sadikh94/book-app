@@ -1,0 +1,67 @@
+.mat-button,
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.mat-form-field {
+  width: 180px;
+}
+
+.mat-dialog {
+  background-color: black;
+}
+
+.edit-book {
+  color: #3c3279;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_form {
+    display: flex;
+		flex-direction: row;
+  }
+
+  &_cover-upload {
+    width: 160px;
+    height: 245px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px dashed rgb(189, 189, 189);
+    background-color: rgba(255, 255, 255, 60%);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+}
+
+.file-input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 250px;
+  cursor: pointer;
+}
+
+.cover {
+  width: 160px;
+  height: 250px;
+  object-fit: cover;
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.book-form {
+	display: flex;
+}

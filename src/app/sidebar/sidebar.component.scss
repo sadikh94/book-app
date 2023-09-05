@@ -1,0 +1,40 @@
+.side-bar {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  transition: width 0.5s ease-in-out;
+  padding: 8px;
+  border-radius: 0px 10px 10px 0px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: calc(100% - 86px);
+
+  background-color: rgba(255, 255, 255, 60%);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  &_about {
+    margin: 0 auto;
+    color: #3c3279;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sideBarResizeOff {
+  width: 41px;
+}
+
+.menu-icon {
+  border-radius: 4px;
+  &:hover {
+    background: #ecd9fb;
+  }
+}

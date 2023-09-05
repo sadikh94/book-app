@@ -1,0 +1,20 @@
+<div
+  class="side-bar"
+  [ngClass]="{ sideBarResizeOff: resized }"
+>
+  <button
+    class="menu-icon"
+    mat-icon-button
+    aria-label="Menu icon"
+    (click)="sideBarResize()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <app-book-category class="side-bar_category"></app-book-category>
+  <p
+    class="side-bar_about"
+    (click)="aboutClick(book)"
+  >
+    About
+  </p>
+</div>

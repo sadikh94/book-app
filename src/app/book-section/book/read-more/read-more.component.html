@@ -1,0 +1,28 @@
+<div class="body">
+  <div class="read-more">
+    <img
+      class="read-more_left"
+      src="{{ book.cover }}"
+      alt="cover"
+    />
+    <div class="read-more_right">
+      <div class="read-more_description">
+        <h1
+          class="read-more_title"
+          mat-dialog-title
+        >
+          {{ book.title }}
+          ({{ book.genre }})
+        </h1>
+        <p>{{ book.description }}</p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="close-btn"
+    mat-button
+    (click)="onClose()"
+  >
+    Close
+  </button>
+</div>

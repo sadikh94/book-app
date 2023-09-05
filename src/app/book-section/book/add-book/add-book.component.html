@@ -1,0 +1,108 @@
+<form
+  class="create-book"
+  [formGroup]="addBookForm"
+	>
+  <h1
+    class="create-book_title"
+    mat-dialog-title
+  >
+    Add a new book
+  </h1>
+  <div class="create-book_form">
+    <div></div>
+    <div class="create-book_cover-upload">
+      <img
+        class="cover"
+        [src]="coverUrl"
+        *ngIf="showCover"
+      />
+      <div
+        *ngIf="!showCover"
+        class="cover_container"
+      >
+        <mat-icon>attach_file</mat-icon>
+        <label for="file-upload"> Add book cover </label>
+      </div>
+      <input
+        class="file-input"
+        id="file-upload"
+        type="file"
+        name="cover"
+        formControlName="cover"
+        (change)="getCover($event)"
+      />
+      <mat-error
+        class="error"
+        *ngIf="
+          addBookForm.get('cover')!.touched && addBookForm.get('cover')!.invalid
+        "
+        >Cover Required!
+      </mat-error>
+    </div>
+    <div>
+      <div mat-dialog-content>
+        <mat-form-field>
+          <mat-label>Book title</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="title"
+            name="title"
+          />
+          <mat-error>Title Required!</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Genre</mat-label>
+        <mat-select formControlName="genre">
+          <mat-option
+            *ngFor="let category of categories"
+            name="genre"
+            [value]="category.genre"
+          >
+            {{ category.genre }}
+          </mat-option>
+        </mat-select>
+        <mat-error>Genre Required!</mat-error>
+      </mat-form-field>
+
+      <div mat-dialog-content>
+        <mat-form-field>
+          <mat-label>Book description</mat-label>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            formControlName="description"
+            name="description"
+            cdkAutosizeMaxRows="5"
+          ></textarea>
+          <mat-error>Description Required!</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      btn
+      mat-button
+      type="submit"
+      (click)="addBook()"
+      [disabled]="!addBookForm.valid"
+      color="primary"
+    >
+      Submit
+    </button>
+    <button
+      mat-button
+      (click)="onCancel()"
+    >
+      Cancel
+    </button>
+  </div>
+</form>

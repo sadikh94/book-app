@@ -1,0 +1,28 @@
+.mat-button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 60%);
+  color: #3c3279;
+
+  &-title {
+    font-family: 'Poppins';
+  }
+}
+
+.search {
+  width: 30%;
+  &-option {
+    color: #3c3279;
+  }
+}
+
+.add-book-icon {
+  margin-left: 10px;
+}

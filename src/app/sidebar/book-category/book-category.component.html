@@ -1,0 +1,56 @@
+<div class="all-categories">
+  <button
+    class="all-categories_book-category"
+    [class.test]="selectedCategoryId === -1"
+    (click)="showAllBooks()"
+    btn
+    mat-button
+  >
+    <div class="all-categories_container">
+      <img
+        class="all-categories_icon"
+        [class.test-icon]="selectedCategoryId === -1"
+        src="../../assets/icons/All.svg"
+        alt="All Books icon"
+      />
+      <p class="all-categories_title">All books</p>
+    </div>
+  </button>
+
+  <button
+    class="all-categories_book-category"
+    [class.test]="category.id === selectedCategoryId"
+    (click)="filterByGenre(category)"
+    *ngFor="let category of categories"
+    btn
+    mat-button
+  >
+    <div class="all-categories_container">
+      <img
+        class="all-categories_icon"
+        [class.test-icon]="category.id === selectedCategoryId"
+        src="{{ category.icon }}"
+        alt="Book category"
+      />
+      <p class="all-categories_title">{{ category.genre }}</p>
+    </div>
+  </button>
+
+  <button
+    class="all-categories_book-category"
+    [class.test]="selectedCategoryId === -2"
+    btn
+    mat-button
+    (click)="showFavorites()"
+  >
+    <div class="all-categories_container">
+      <img
+        class="all-categories_icon"
+        [class.test-icon]="selectedCategoryId === -2"
+        src="../../assets/icons/Favorites.svg"
+        alt="Favorites icon"
+      />
+      <p class="all-categories_title">Favorites</p>
+    </div>
+  </button>
+</div>

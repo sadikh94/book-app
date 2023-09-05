@@ -1,0 +1,51 @@
+<mat-toolbar class="header mat-elevation-z4">
+  <span class="header-title">BookApp</span>
+  <span class="spacer"></span>
+
+  <mat-form-field
+    floatLabel="never"
+    class="search"
+  >
+    <button
+      btn
+      mat-icon-button
+      aria-label="Search icon"
+      matPrefix
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+    <input
+      matInput
+      id="searchInput"
+      type="text"
+      placeholder="Search"
+      autocomplete="on"
+      [matAutocomplete]="auto"
+      [(ngModel)]="searchValue"
+      (keydown)="onSearch($event)"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let book of filteredBooks"
+        [value]="book.title"
+        class="search-option"
+        (click)="onSearch($event)"
+      >
+        <span>{{ book.title }}</span> |
+        <small>{{ book.genre }}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <span class="spacer"></span>
+
+  <button
+    class="add-book-icon"
+    btn
+    mat-button
+    (click)="onBookAdd()"
+  >
+    <mat-icon>library_add</mat-icon>
+    Add book
+  </button>
+</mat-toolbar>

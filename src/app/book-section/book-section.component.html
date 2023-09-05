@@ -1,0 +1,10 @@
+<body class="book-section">
+  <app-book
+    class="book-section_book-props"
+    *ngFor="let book of books"
+    [book]="book"
+    (deleteBookEvent)="onDelete(book)"
+    (addToFavoritesEvent)="addToFavorites($event)"
+  >
+  </app-book>
+</body>

@@ -1,0 +1,253 @@
+:host {
+  min-width: 240px;
+  padding: 5px;
+}
+
+button[disabled] {
+  pointer-events: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-flip-card .book,
+.book-flip-card .book-back {
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 60%);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  backface-visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  width: 240px;
+
+  &_header {
+    width: 100%;
+    height: 45px;
+    border-bottom: 2px solid white;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 60%);
+
+    &-icons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.book-flip-card .book:hover,
+.book-flip-card .book-back:hover {
+  box-shadow: rgba(95, 40, 86, 0.19) 0px 10px 20px,
+    rgba(107, 42, 103, 0.23) 0px 6px 6px;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.book-back {
+  transform: rotateY(180deg);
+}
+
+.arrow-icon {
+  opacity: 1;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.arrow-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
+.arrow-background {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  opacity: 1;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b6cbe1;
+  border-radius: 0 20px 20px 0;
+}
+
+.book-flip {
+  height: 360px;
+  display: block;
+  perspective: 800px;
+
+  &-card {
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+.book {
+  height: 360px;
+  position: relative;
+  &_header {
+    &-icons {
+      &-edit,
+      &-favorite,
+      &-delete {
+        color: #b6cbe1;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+
+      &-edit:hover {
+        color: rgb(222, 16, 255);
+      }
+
+      .black {
+        color: #b6cbe1;
+      }
+
+      .red {
+        color: rgb(255, 16, 16);
+      }
+
+      &-favorite:active {
+        transform: scale(1.95);
+        transition: 0.05s;
+      }
+
+      &-delete:hover {
+        color: rgb(16, 183, 255);
+      }
+    }
+  }
+
+  &_body {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &-cover {
+      width: calc(100% - 90px);
+      height: calc(100% - 20px);
+
+      object-fit: cover;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      border: 2px solid white;
+      border-radius: 10px;
+      pointer-events: none;
+    }
+  }
+
+  &_foot {
+    height: 65px;
+    border-top: 2px solid white;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 60%);
+    overflow: hidden;
+    padding-bottom: 5px;
+
+    &-category-title {
+      font-weight: normal;
+      font-size: 1rem;
+      text-align: center;
+      color: #3c3279;
+    }
+
+    &-name-title {
+      width: calc(100% - 20px);
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1rem;
+      color: #3c3279;
+    }
+  }
+  &-back {
+    position: absolute;
+    top: 0;
+
+    &_header {
+      &-icons {
+        &-download,
+        &-read,
+        &-buy {
+          color: #b6cbe1;
+          transition: 0.5s;
+          cursor: pointer;
+        }
+
+        &-download:hover {
+          color: rgb(16, 255, 97);
+        }
+
+        &-read:hover {
+          color: rgb(222, 16, 255);
+        }
+
+        &-buy:hover {
+          color: rgb(16, 183, 255);
+        }
+      }
+    }
+
+    &_body {
+      padding-top: 15px;
+      height: 315px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+
+
+      &-description-title {
+        font-weight: bold;
+        font-size: 1rem;
+        margin: 1rem 0 0.3rem 0;;
+        text-align: center;
+        line-height: 20px;
+
+        color: #3c3279;
+      }
+
+      &-book-description {
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 20px;
+        margin: 0 1rem 1rem 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 12;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        color: #3c3279;
+      }
+    }
+  }
+}

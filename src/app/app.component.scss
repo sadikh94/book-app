@@ -1,0 +1,19 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  scroll-behavior: smooth;
+}
+
+.sidebar {
+  margin-top: 20px;
+}
+
+.books-section {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  width: 100%;
+}
