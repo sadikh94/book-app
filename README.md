@@ -8,8 +8,10 @@ To run the project, simply execute the following two commands:
 
 ```
 1. npm start
-2. npm run start:db
 
+```
+```
+2. npm run start:db
 ```
 
 
