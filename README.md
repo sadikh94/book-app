@@ -6,6 +6,11 @@ The Book App is a personal pet project that provides a feature-rich platform for
 Getting Started:
 To run the project, simply execute the following two commands:
 
-npm start
-npm run start:db
+```
+1. npm start
+2. npm run start:db
+
+```
+
+
 Explore your book collection and enjoy effortless book management with the Book App.
